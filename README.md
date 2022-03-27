@@ -1,9 +1,8 @@
-
 # products-react
 
 This is an online products system, implemented using react and react-bootstrap. Contains functions such as products. The system uses many reusable components to improve the reusability of the project.
 
-
+![](src/images/products.gif)
 
 ## Getting started
 
