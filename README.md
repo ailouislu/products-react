@@ -6,7 +6,7 @@ This is an online products system, implemented using react and react-bootstrap. 
 
 ## Getting started
 
-You can view a live demo over at http://nzlouis.com:3000
+You can view a live demo over at https://products.nzlouis.com
 
 To get the frontend running locally:
 
