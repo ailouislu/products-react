@@ -1,103 +1,44 @@
 import { cleanup} from '@testing-library/react'
-import { getAllProductsNZD, getAllProductsUSD, getAllProductsEuro } from "../services/fakeProductService";
-import { getExchanges, getNZD, getUSD, getEuro } from "../services/fakeExchangService"
-import { getTypes } from "../services/fakeTypeService"
+import { getPosts, getPost } from 'posts'
+jest.mock('posts')
 
 afterEach(cleanup);
 
-test('should return correct length', () => {
-    const productsNZD =  getAllProductsNZD();
-    const productUSD =  getAllProductsUSD();
-    const productEuro =  getAllProductsEuro();
-    expect(productsNZD).toHaveLength(8);
-    expect(productUSD).toHaveLength(8);
-    expect(productEuro).toHaveLength(8);
-
-    const exchanges = getExchanges();
-    expect(exchanges).toHaveLength(3);
-
-    const types = getTypes();
-    expect(types).toHaveLength(3);
+test('should return correct length', async () => {
+    const posts = await getPosts();
+    const post = await getPost();
+    expect(posts.data).toHaveLength(10);
+    expect(post.data).toHaveLength(1);
 })
 
-test('should return correct exchange rates', () => {
-    const NZD =  getNZD();
-    const USD =  getUSD();
-    const Euro =  getEuro();
-    expect(NZD).toBe("1");
-    expect(USD).toBe("0.76");
-    expect(Euro).toBe("0.67");
-})
+test('should return correct posts', async () => {
 
-test('should return correct products', () => {
-    const exceptProductsNZD =  [
-        {
-            id: 5,
-            name: 'Nokia Lumia 920/930/Icon Crimson Phone Case',
-            price: '10.00',
-            type: 'Phone Case'
-          },
-          {
-            id: 6,
-            name: 'Xamarin C# T-Shirt',
-            price: '15.00',
-            type: 'T-Shirt'
-          },
-    ];
-    const productsNZD = getAllProductsNZD();
-    expect(productsNZD).toEqual(expect.arrayContaining(exceptProductsNZD));
-
-    const exceptProductsUSD =  [
+    const exceptPosts =  [
       {
-        id: 1,
-        name: 'Hewlett-Packard Rideable Lawnmower',
-        price: '2280.00',
-        type: 'Lawnmower'
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
       },
       {
-        id: 2,
-        name: "Fisher Price's My First Lawnmower",
-        price: '34.20',
-        type: 'Lawnmower'
+        "userId": 1,
+        "id": 2,
+        "title": "qui est esse",
+        "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
       },
     ];
-    const productsUSD = getAllProductsUSD();
-    expect(productsUSD).toEqual(expect.arrayContaining(exceptProductsUSD));
+    const posts = await getPosts();
+    expect(posts.data).toEqual(expect.arrayContaining(exceptPosts));
 
-    const exceptProductsEuro =  [
+    const exceptPost =  [
       {
-        id: 7,
-        name: 'New York Yankees T-Shirt',
-        price: '5.36',
-        type: 'T-Shirt'
-      },
-      {
-        id: 8,
-        name: 'Disney Sleeping Beauty T-Shirt',
-        price: '6.70',
-        type: 'T-Shirt'
+        "userId": 1,
+        "id": 2,
+        "title": "qui est esse",
+        "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla"
       }
     ];
-    const productsEuro = getAllProductsEuro();
-    expect(productsEuro).toEqual(expect.arrayContaining(exceptProductsEuro));
+    const post = await getPost();
+    expect(post.data).toEqual(expect.arrayContaining(exceptPost));
 })
 
-test('should return correct exchanges', () => {
-    const exceptExchanges =  [                                                                                                                                                                                                        
-        { id: 1, name: 'NZD' },                                                                                                                                                                                
-        { id: 2, name: 'USD' },                                                                                                                                                                                
-        { id: 3, name: 'Euro' }                                                                                                                                                                                
-      ];
-    const exchanges = getExchanges();
-    expect(exchanges).toEqual(exceptExchanges);
-})
-
-test('should return correct types', () => {
-    const exceptTypes =  [
-        { id: 1, name: 'Lawnmower' },
-        { id: 2, name: 'Phone Case' },
-        { id: 3, name: 'T-Shirt' }
-      ];
-    const types = getTypes();
-    expect(types).toEqual(exceptTypes);
-})

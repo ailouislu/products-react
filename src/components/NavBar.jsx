@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
 import { getExchanges } from "../services/fakeExchangService";
 
@@ -14,22 +15,26 @@ const NavBar = () => {
   const exchanges = getExchanges();
 
   return (
-    <Navbar sticky="top" bg="light" variant="light" expand="lg">
+    <Navbar sticky="top" bg="light" expand="lg">
       <Container>
-      <Navbar.Brand onClick={handleLink}>
-        <img
-            alt="NZLouis.com"
-            src={require(`../images/nzlouis.jpg`).default}
-            width="100"
-            height="30"
-            className="d-inline-block align-top"
-          />
-      </Navbar.Brand>
-      <Nav className="me-auto">
-        {exchanges.map((item) => 
-          <Nav.Link key={item.id} href={`/products/${item.name}`}>Products ({item.name})</Nav.Link>
-        )}
-      </Nav>
+        <Navbar.Brand onClick={handleLink}>
+          <img
+              alt="NZLouis.com"
+              src={require(`../images/nzlouis.jpg`).default}
+              width="100"
+              height="30"
+              className="d-inline-block align-top"
+            />
+        </Navbar.Brand>
+        <Nav className="me-auto">
+            <Nav.Link href={`/posts`}>Posts</Nav.Link>
+            <Nav.Link href={`/pincodes`}>PIN Codes</Nav.Link>
+            <NavDropdown title="Products" id="basic-nav-dropdown">
+                {exchanges.map((item) => 
+                  <NavDropdown.Item key={item.id} href={`/products/${item.name}`}>Products ({item.name})</NavDropdown.Item>
+                )}
+            </NavDropdown>
+        </Nav>
       </Container>
     </Navbar>
   );

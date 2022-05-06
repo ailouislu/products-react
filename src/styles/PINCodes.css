@@ -1,0 +1,34 @@
+
+.numbers-title {
+  margin:20px;
+}
+
+.numbers-breadcrumb {
+  margin:20px;
+}
+
+.numbers-button {
+  font-size: 1rem;
+  margin:20px;
+}
+
+.numbers {
+  color: black;
+  margin:20px;
+  border:0px solid #000;
+  width:900px;
+  text-align:left;
+  padding: 10px;
+}
+
+.numbers-input {
+  width: 130px;
+  margin:20px;
+}
+
+.numbers-label {
+  color: black;
+  font-size: 1.2rem;
+  margin:20px;
+  border:0px solid #000;
+}

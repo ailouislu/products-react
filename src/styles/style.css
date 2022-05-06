@@ -1,0 +1,8 @@
+
+.table_textStyles:first-letter {
+    text-transform: capitalize;
+}
+
+.table_header {
+    min-width: 5rem;
+}

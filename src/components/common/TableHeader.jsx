@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import  "../../styles/style.css";
 
 
 class TableHeader extends Component {
@@ -27,7 +28,7 @@ class TableHeader extends Component {
         <tr>
           {this.props.columns.map(column => (
             <th
-              className="clickable"
+              className="table_header clickable"
               key={column.path || column.key}
               onClick={() => this.raiseSort(column.path)}
             >

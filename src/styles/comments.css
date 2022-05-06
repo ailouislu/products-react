@@ -1,0 +1,43 @@
+
+.post_textStyles:first-letter {
+    text-transform: capitalize;
+}
+
+.post_title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post_body {
+    margin-bottom: 1rem;
+}
+
+.post_userId {
+    margin-bottom: 2rem;
+}
+
+.comment {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.comment_title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment_email {
+    display: inline-block;
+}
+
+.comment_textStyles:first-letter {
+    text-transform: capitalize;
+}
+
+.comment_button {
+    text-align: center;
+}
+
+.comment_body {
+    margin-bottom: 2rem;
+}
