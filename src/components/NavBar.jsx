@@ -34,6 +34,13 @@ const NavBar = () => {
                   <NavDropdown.Item key={item.id} href={`/products/${item.name}`}>Products ({item.name})</NavDropdown.Item>
                 )}
             </NavDropdown>
+            <Nav.Link href={`/catalogViewer`}>CatalogViewer</Nav.Link>
+            <NavDropdown title="Online Tests" id="basic-nav-dropdown">
+                  <NavDropdown.Item href={`/liked/`}>Liked Button</NavDropdown.Item>
+                  <NavDropdown.Item href={`/counter/`}>Counter</NavDropdown.Item>
+                  <NavDropdown.Item href={`/todolist/`}>To Do List</NavDropdown.Item>
+                  <NavDropdown.Item href={`/toggle/`}>Toggle</NavDropdown.Item>
+            </NavDropdown>
         </Nav>
       </Container>
     </Navbar>

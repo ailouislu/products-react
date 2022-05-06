@@ -1,0 +1,28 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.like-button {
+  font-size: 1rem;
+  padding: 5px 10px;
+  color:  #585858;
+}
+
+.dislike-button {
+  font-size: 1rem;
+  padding: 5px 10px;
+  color:  #585858;
+}
+
+.liked, .disliked {
+  background: #B2A5A3 !important;
+}
+
+.likes-counter {
+  color: #006400;
+}
+
+.dislikes-counter {
+  color: #0000CD;
+}
