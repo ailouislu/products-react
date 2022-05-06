@@ -1,6 +1,6 @@
 # products-react
 
-This is an online products system, implemented using react and react-bootstrap. Contains functions such as products. The system uses many reusable components to improve the reusability of the project.
+This project includes many online react test questions that I have participated, including the posts comments system, the PIN Codes generation page, the products display page that the display in NZD, USD, and EUR. The Catalog Viewer shows the function of images switching, as well as other, react online test questions. By solving these problems, I got a job, and most importantly, my react ability has been greatly improved.
 
 ![image](src/images/products.jpg)
 

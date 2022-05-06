@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import CatalogViewer from '../components/CatalogViewer';
-import { image1, image2, image3, image4 } from './assets/images'
+import { image1, image2, image3, image4 } from '../images'
 
 jest.useFakeTimers()
 
