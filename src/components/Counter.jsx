@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 export default class Counter extends Component {
     state = {
@@ -14,6 +15,12 @@ export default class Counter extends Component {
     render() {
         return (
             <>
+                <div>
+                    <Breadcrumb>
+                        <Breadcrumb.Item>Online Tests</Breadcrumb.Item>
+                        <Breadcrumb.Item active>Counter</Breadcrumb.Item>
+                    </Breadcrumb>
+                </div>
                 <div>
                     <h2>
                       <span className="counter">{this.state.counter}</span>

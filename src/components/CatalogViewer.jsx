@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import 'h8k-components'
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { image1, image2, image3, image4 } from '../images'
 import Thumbs from "./Thumbs";
 import Viewer from "./Viewer";
@@ -72,6 +73,11 @@ function CatalogViewer() {
 
   return (
     <Fragment>
+      <div>
+          <Breadcrumb>
+            <Breadcrumb.Item active>Catalog Viewer</Breadcrumb.Item>
+          </Breadcrumb>
+      </div>
       <h8k-navbar header={ title }></h8k-navbar>
       <div className='layout-column justify-content-center mt-75'>
         <div className='layout-row justify-content-center'>
