@@ -6,7 +6,7 @@ This project includes many online react test questions that I have participated,
 
 ## Getting started
 
-You can view a live demo over at https://products.nzlouis.com 
+You can view a live demo over at https://products.nzlouis.com
 
 To get the frontend running locally:
 
